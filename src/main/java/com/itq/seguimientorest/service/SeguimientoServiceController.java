@@ -2,6 +2,7 @@ package com.itq.seguimientorest.service;
 
 import java.sql.Date;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,16 +29,22 @@ public class SeguimientoServiceController {
     @Autowired
 	private ubicacionRepository ubicacionRepository;
 
+    private static final String LATITUDE_REGEX = "[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)";
+    private static final String LONGITUDE_REGEX = "[-+]?((1[0-7]|[1-9])?\\d(\\.\\d+)?|180(\\.0+)?)";
+    
     //Crear paquete
     @PostMapping(value="/paquete",consumes="application/json", produces = "application/json")
     public Ack crearPaquete(@RequestBody Paquete paquete){
+        if (paquete.getId_usuario_remitente() == null || paquete.getId_usuario_destinatario() == null) {
+            throw new IllegalArgumentException("Los campos id_usuario_remitente y id_usuario_destinatario son requeridos.");
+        }
         System.out.println(paquete.getId_usuario_remitente());
         System.out.println(paquete.getId_usuario_destinatario());
         Ack ack = new Ack();
 		System.out.println("Paquete Recibido: '" + paquete.getDescripcion() + "'");
 		
 		Date fechaHoy = new Date(System.currentTimeMillis());
-		
+
 		Usuario remitente = new Usuario(paquete.getId_usuario_remitente());
 		Usuario destinatario = new Usuario(paquete.getId_usuario_destinatario());
 		System.out.println(remitente);
@@ -53,6 +60,9 @@ public class SeguimientoServiceController {
 
     @PutMapping(value = "/paquete", consumes = "application/json", produces = "application/json")
     public Ack actualizarPaquete(@RequestBody ActulizaPaquete actualizacion) throws Exception {
+        if (actualizacion.getId_paquete() == null) {
+            throw new IllegalArgumentException("El campo id_paquete es requerido.");
+        }
         Optional<Paquetes> paqueteOptional = paqueteRepository.findById(actualizacion.getId_paquete());
         System.out.println(actualizacion.getId_paquete());
         if (paqueteOptional.isPresent()) {
@@ -62,7 +72,7 @@ public class SeguimientoServiceController {
             
             Ack ack = new Ack();
             ack.setCodigo(200);
-            ack.setDescripcion("Paquete :"+actualizacion.getId_paquete()+" modificado");
+            ack.setDescripcion("Paquete :"+actualizacion.getId_paquete()+" actualizado");
             return ack;
         } else {
             // Manejar el caso cuando el paquete no existe
@@ -74,14 +84,24 @@ public class SeguimientoServiceController {
     //Crear ubicacion
     @PostMapping(value="/ubicacion",consumes="application/json", produces = "application/json")
     public Ack crearUbicacion(@RequestBody Ubicacion ubicacion){
+        if (ubicacion.getLatitud() == null || ubicacion.getLongitud() == null || ubicacion.getDescripcion() == null) {
+            throw new IllegalArgumentException("Los campos latitud, longitud y descripcion son requeridos.");
+        }
+        validateData(ubicacion.getLatitud(), LATITUDE_REGEX, "latitud");
+        validateData(ubicacion.getLongitud(), LONGITUDE_REGEX, "longitud");
         Ubicaciones newUbicacion = new Ubicaciones(ubicacion.getLatitud(), ubicacion.getLongitud(), ubicacion.getDescripcion());
 		ubicacionRepository.save(newUbicacion);
 		Ack ack = new Ack();
 		System.out.println("Ubicacion:" + ubicacion.getDescripcion() + "creada con exito");
-
 		ack.setDescripcion("Ubicacion:" + ubicacion.getDescripcion() + "creada exitosamente");
 		ack.setCodigo(200);
 
 		return ack;
+    }
+
+    private void validateData(String data, String regex, String fieldName) {
+        if (data == null || !Pattern.matches(regex, data)) {
+            throw new IllegalArgumentException("El campo " + fieldName + " es inválido.");
+        }
     }
 }
