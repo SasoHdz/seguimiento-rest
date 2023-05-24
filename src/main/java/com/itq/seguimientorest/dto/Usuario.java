@@ -5,15 +5,17 @@ public class Usuario {
     String nombre;
     String a_paterno;
     String a_materno;
-    String direccion;
+    Direccion direccion;
     String telefono;
     String email;
     String password;
     String fecha_nacimiento;
 
-    public Usuario(Integer id_usuario, String nombre, String a_paterno, String a_materno, String direccion,
-            String telefono,
-            String email, String password, String fecha_nacimiento) {
+    public Usuario() {
+    }
+
+    public Usuario(Integer id_usuario, String nombre, String a_paterno, String a_materno, Direccion direccion,
+            String telefono, String email, String password, String fecha_nacimiento) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.a_paterno = a_paterno;
@@ -57,11 +59,11 @@ public class Usuario {
         this.a_materno = a_materno;
     }
 
-    public String getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
 

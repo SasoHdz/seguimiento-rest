@@ -13,6 +13,10 @@ import com.itq.seguimientorest.dto.ActulizaPaquete;
 import com.itq.seguimientorest.dto.Paquete;
 import com.itq.seguimientorest.dto.Ubicacion;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 @RestController
 public class SeguimientoServiceController {
 
@@ -22,6 +26,9 @@ public class SeguimientoServiceController {
     @Autowired
     ServiceUbicacion serviceUbicacion;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(SeguimientoServiceController.class);
+
+
     // Crear paquete
     @PostMapping(value = "/paquete", consumes = "application/json", produces = "application/json")
     public Ack crearPaquete(@RequestBody Paquete paquete) {
@@ -29,10 +36,12 @@ public class SeguimientoServiceController {
         Ack ack = new Ack();
         try {
             if (servicePaquete.crearPaquete(paquete)) {
-                ack.setDescripcion("Paquete creado con exito su id es:");
+                LOGGER.debug("Paquete creado con exito :)");
+                ack.setDescripcion("Paquete creado con exito");
                 ack.setCodigo(200);
             } 
         } catch (Exception e) {
+            LOGGER.error(e.getMessage());
             ack.setDescripcion(e.getMessage());
             ack.setCodigo(400);
         }
@@ -47,8 +56,10 @@ public class SeguimientoServiceController {
             if (servicePaquete.actualizarPaquete(actualizacion)) {
                 ack.setCodigo(200);
                 ack.setDescripcion("Paquete :" + actualizacion.getId_paquete() + " actualizado");
+                LOGGER.debug("Paquete :" + actualizacion.getId_paquete() + " actualizado");
             }
         } catch (Exception e) {
+            LOGGER.error(e.getMessage());
             ack.setCodigo(500);
             ack.setDescripcion(e.getMessage());
         }
@@ -64,13 +75,14 @@ public class SeguimientoServiceController {
         Ack ack = new Ack();
         try {
             if (serviceUbicacion.crearUbicacion(ubicacion)) {
-                System.out.println("Ubicacion:" + ubicacion.getDescripcion() + "creada con exito");
+                LOGGER.debug("Ubicacion:" + ubicacion.getDescripcion() + "creada con exito");
                 ack.setDescripcion("Ubicacion:" + ubicacion.getDescripcion() + "creada exitosamente");
                 ack.setCodigo(200);
     
             } 
         } catch (Exception e) {
-            System.out.println("Ubicacion no pudo ser creada");
+            LOGGER.error(e.getMessage());
+            LOGGER.debug("Ubicacion no pudo ser creada");
             ack.setDescripcion(e.getMessage());
             ack.setCodigo(400);
         }

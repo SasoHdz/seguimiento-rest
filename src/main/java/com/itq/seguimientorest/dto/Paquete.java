@@ -5,13 +5,13 @@ public class Paquete {
     String descripcion;
     Float peso;
     String dimensiones;
-    String direccion_entrega;
+    Direccion direccion_entrega;
     String fecha_creacion;
     String estado;
     Integer id_usuario_remitente;
     Integer id_usuario_destinatario;
 
-    public Paquete(Integer id_paquete, String descripcion, Float peso, String dimensiones, String direccion_entrega,
+    public Paquete(Integer id_paquete, String descripcion, Float peso, String dimensiones, Direccion direccion_entrega,
             String fecha_creacion, String estado, Integer id_usuario_remitente, Integer id_usuario_destinatario) {
         this.id_paquete = id_paquete;
         this.descripcion = descripcion;
@@ -56,11 +56,11 @@ public class Paquete {
         this.dimensiones = dimensiones;
     }
 
-    public String getDireccion_entrega() {
+    public Direccion getDireccion_entrega() {
         return direccion_entrega;
     }
 
-    public void setDireccion_entrega(String direccion_entrega) {
+    public void setDireccion_entrega(Direccion direccion_entrega) {
         this.direccion_entrega = direccion_entrega;
     }
 
@@ -96,4 +96,8 @@ public class Paquete {
         this.id_usuario_destinatario = id_usuario_destinatario;
     }
 
+    public String getDicToString() {
+        return this.getDireccion_entrega().codigo_postal +" "+ this.getDireccion_entrega().colonia
+        +" "+ this.getDireccion_entrega().calle +" "+ this.getDireccion_entrega().numero;
+    }
 }
