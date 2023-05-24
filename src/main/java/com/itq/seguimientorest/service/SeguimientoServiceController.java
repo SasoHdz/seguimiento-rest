@@ -27,11 +27,13 @@ public class SeguimientoServiceController {
     public Ack crearPaquete(@RequestBody Paquete paquete) {
 
         Ack ack = new Ack();
-        if (servicePaquete.crearPaquete(paquete)) {
-            ack.setDescripcion("Paquete creado con exito su id es:");
-            ack.setCodigo(200);
-        } else {
-            ack.setDescripcion("El paquete no pudo ser creado:");
+        try {
+            if (servicePaquete.crearPaquete(paquete)) {
+                ack.setDescripcion("Paquete creado con exito su id es:");
+                ack.setCodigo(200);
+            } 
+        } catch (Exception e) {
+            ack.setDescripcion(e.getMessage());
             ack.setCodigo(400);
         }
 
@@ -39,14 +41,16 @@ public class SeguimientoServiceController {
     }
 
     @PutMapping(value = "/paquete", consumes = "application/json", produces = "application/json")
-    public Ack actualizarPaquete(@RequestBody ActulizaPaquete actualizacion) throws Exception {
+    public Ack actualizarPaquete(@RequestBody ActulizaPaquete actualizacion) {
         Ack ack = new Ack();
-        if (servicePaquete.actualizarPaquete(actualizacion)) {
-            ack.setCodigo(200);
-            ack.setDescripcion("Paquete :" + actualizacion.getId_paquete() + " actualizado");
-        } else {
-            ack.setCodigo(400);
-            ack.setDescripcion("No fue posible actualizar el paquete");
+        try {
+            if (servicePaquete.actualizarPaquete(actualizacion)) {
+                ack.setCodigo(200);
+                ack.setDescripcion("Paquete :" + actualizacion.getId_paquete() + " actualizado");
+            }
+        } catch (Exception e) {
+            ack.setCodigo(500);
+            ack.setDescripcion(e.getMessage());
         }
 
         return ack;
@@ -58,16 +62,19 @@ public class SeguimientoServiceController {
     public Ack crearUbicacion(@RequestBody Ubicacion ubicacion) {
 
         Ack ack = new Ack();
-        if (serviceUbicacion.crearUbicacion(ubicacion)) {
-            System.out.println("Ubicacion:" + ubicacion.getDescripcion() + "creada con exito");
-            ack.setDescripcion("Ubicacion:" + ubicacion.getDescripcion() + "creada exitosamente");
-            ack.setCodigo(200);
-
-        } else {
+        try {
+            if (serviceUbicacion.crearUbicacion(ubicacion)) {
+                System.out.println("Ubicacion:" + ubicacion.getDescripcion() + "creada con exito");
+                ack.setDescripcion("Ubicacion:" + ubicacion.getDescripcion() + "creada exitosamente");
+                ack.setCodigo(200);
+    
+            } 
+        } catch (Exception e) {
             System.out.println("Ubicacion no pudo ser creada");
-            ack.setDescripcion("Ubicacion no pudo ser creada");
+            ack.setDescripcion(e.getMessage());
             ack.setCodigo(400);
         }
+        
 
         return ack;
     }
