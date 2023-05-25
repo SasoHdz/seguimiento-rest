@@ -1,14 +1,31 @@
 package com.itq.seguimientorest.dto;
+import javax.validation.constraints.*;
 
 public class Usuario {
+
+    @NotEmpty
     Integer id_usuario;
+
+    @NotEmpty
     String nombre;
+
+
     String a_paterno;
     String a_materno;
+
+    @NotEmpty
     Direccion direccion;
+
+    @Pattern(regexp = "\\d{10}")
     String telefono;
+
+    @Pattern(regexp = "^[\\w.-]+@[a-zA-Z_-]+?(?:\\.[a-zA-Z]{2,})+$")
     String email;
+
+    @Size(min = 10, max = 120)
     String password;
+
+    @Pattern(regexp = "^(\\d{4})-(\\d{2})-(\\d{2})$")
     String fecha_nacimiento;
 
     public Usuario() {

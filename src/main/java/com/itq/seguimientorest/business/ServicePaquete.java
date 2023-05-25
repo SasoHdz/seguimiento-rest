@@ -33,7 +33,7 @@ public class ServicePaquete {
             /* System.out.println(newPaquete.getId_usuario_remitente());
             System.out.println(newPaquete.getId_usuario_destinatario()); */
             LOGGER.debug("Paquete Recibido: '" + newPaquete.getDescripcion() + "'");
-/*             System.out.println("Paquete Recibido: '" + newPaquete.getDescripcion() + "'");
+/*          System.out.println("Paquete Recibido: '" + newPaquete.getDescripcion() + "'");
  */
             Date fechaHoy = new Date(System.currentTimeMillis());
 

@@ -1,7 +1,6 @@
 package com.itq.seguimientorest.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,13 +13,13 @@ import com.itq.seguimientorest.dto.ActulizaPaquete;
 import com.itq.seguimientorest.dto.Paquete;
 import com.itq.seguimientorest.dto.Ubicacion;
 
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
 @RestController
-@Validated
 public class SeguimientoServiceController {
 
     @Autowired
@@ -34,18 +33,21 @@ public class SeguimientoServiceController {
 
     // Crear paquete
     @PostMapping(value = "/paquete", consumes = "application/json", produces = "application/json")
-    public Ack crearPaquete(@RequestBody Paquete paquete) {
+    public Ack crearPaquete(@Valid @RequestBody Paquete paquete) {
 
         Ack ack = new Ack();
         try {
             if (servicePaquete.crearPaquete(paquete)) {
+                LOGGER.debug("Paquete creado con exito :)");
+                LOGGER.debug("Paquete creado con exito :)");
                 LOGGER.debug("Paquete creado con exito :)");
                 ack.setDescripcion("Paquete creado con exito");
                 ack.setCodigo(200);
             } 
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
-            ack.setDescripcion(e.getMessage());
+            
+            ack.setDescripcion(e.getCause().getMessage());
             ack.setCodigo(400);
         }
 
@@ -53,7 +55,7 @@ public class SeguimientoServiceController {
     }
 
     @PutMapping(value = "/paquete/nuevo_estado", consumes = "application/json", produces = "application/json")
-    public Ack actualizarPaquete(@RequestBody ActulizaPaquete actualizacion) {
+    public Ack actualizarPaquete(@Valid @RequestBody ActulizaPaquete actualizacion) {
         Ack ack = new Ack();
         try {
             if (servicePaquete.actualizarPaquete(actualizacion)) {
@@ -73,7 +75,7 @@ public class SeguimientoServiceController {
 
     // Crear ubicacion
     @PostMapping(value = "/ubicacion", consumes = "application/json", produces = "application/json")
-    public Ack crearUbicacion(@RequestBody Ubicacion ubicacion) {
+    public Ack crearUbicacion(@Valid @RequestBody Ubicacion ubicacion) {
 
         Ack ack = new Ack();
         try {

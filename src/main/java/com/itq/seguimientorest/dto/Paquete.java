@@ -3,13 +3,13 @@ import javax.validation.constraints.*;
 
 
 public class Paquete {
-    @Pattern(regexp = "\\d+",message = "El id es un numero entero")
+    @NotEmpty
     Integer id_paquete;
 
     @Size(min = 10 , max = 180, message = "La descripcion es muy corta")
     String descripcion;
 
-    @Pattern(regexp = "\\d+\\.?\\d+", message = "Deben ser solo numeros")
+    @NotEmpty
     Float peso;
 
     @Pattern(regexp = "\\d+")
@@ -17,16 +17,16 @@ public class Paquete {
 
     Direccion direccion_entrega;
 
-    @Pattern(regexp = "\\d{4}\\-\\d{2}\\-\\d{2}")
+    @Pattern(regexp = "\\d{4}\\-\\d{2}\\-\\d{2}", message = "El formato es yyyy-mm-dd")
     String fecha_creacion;
 
     @Size(min = 3, max = 180, message = "El estado es muy corto")
     String estado;
 
-    @Pattern(regexp = "\\d+")
+    @NotEmpty
     Integer id_usuario_remitente;
 
-    @Pattern(regexp = "\\d+")
+    @NotEmpty
     Integer id_usuario_destinatario;
 
     public Paquete(Integer id_paquete, String descripcion, Float peso, String dimensiones, Direccion direccion_entrega,

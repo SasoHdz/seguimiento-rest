@@ -3,7 +3,7 @@ import javax.validation.constraints.*;
 
 
 public class ActulizaPaquete {
-    @NotBlank(message = "El id_paquete no puede estar vacío")
+    @NotEmpty
     Integer id_paquete;
 
     @NotEmpty
