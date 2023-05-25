@@ -1,5 +1,6 @@
 package com.itq.seguimientorest.dto;
 
+
 public class Repartidor {
     Integer id_repartidor;
     String nombre;

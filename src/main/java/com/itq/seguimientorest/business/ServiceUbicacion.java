@@ -13,8 +13,8 @@ public class ServiceUbicacion {
     @Autowired
     private ubicacionRepository ubicacionRepository;
 
-    private static final String LATITUDE_REGEX = "[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)";
-    private static final String LONGITUDE_REGEX = "[-+]?((1[0-7]|[1-9])?\\d(\\.\\d+)?|180(\\.0+)?)";
+    private static final String LATITUDE_REGEX = "^(90|\\d{1,2})°\\s([0-5]?\\d)′\\s([0-5]?\\d)″\\s([NS])$";
+    private static final String LONGITUDE_REGEX = "^(180|\\d{1,2})°\\s([0-5]?\\d)′\\s([0-5]?\\d)″\\s([EO])$";
 
     public Boolean crearUbicacion(Ubicacion ubicacion) {
         boolean creado = false;

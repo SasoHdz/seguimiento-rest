@@ -1,6 +1,7 @@
 package com.itq.seguimientorest.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,11 +14,13 @@ import com.itq.seguimientorest.dto.ActulizaPaquete;
 import com.itq.seguimientorest.dto.Paquete;
 import com.itq.seguimientorest.dto.Ubicacion;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
 @RestController
+@Validated
 public class SeguimientoServiceController {
 
     @Autowired
@@ -49,7 +52,7 @@ public class SeguimientoServiceController {
         return (ack);
     }
 
-    @PutMapping(value = "/paquete", consumes = "application/json", produces = "application/json")
+    @PutMapping(value = "/paquete/nuevo_estado", consumes = "application/json", produces = "application/json")
     public Ack actualizarPaquete(@RequestBody ActulizaPaquete actualizacion) {
         Ack ack = new Ack();
         try {

@@ -1,8 +1,15 @@
 package com.itq.seguimientorest.dto;
+import javax.validation.constraints.*;
+
 
 public class ActulizaPaquete {
+    @NotBlank(message = "El id_paquete no puede estar vacío")
     Integer id_paquete;
+
+    @NotEmpty
     Integer id_repartidor;
+
+    @Size(min = 10, max = 20, message = "Esta vacio")
     String newState;
 
     public ActulizaPaquete() {

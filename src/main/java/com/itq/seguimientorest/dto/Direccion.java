@@ -1,9 +1,18 @@
 package com.itq.seguimientorest.dto;
+import javax.validation.constraints.*;
+
 
 public class Direccion {
+    @Pattern(regexp = "\\d{5}", message = "El formato es ddddd. Ejemplo: 76672")
     String codigo_postal;
+
+    @Size(min = 3, max = 180, message = "El nombre es muy corto")
     String calle;
+
+    @Size(min = 3, max = 180, message = "El nombre es muy corto")
     String colonia;
+
+    @Pattern(regexp = "\\#\\d{1,9}", message = "El formato es #dd. Ejemplo: #22")
     String numero;
 
     public Direccion() {
