@@ -3,13 +3,13 @@ import javax.validation.constraints.*;
 
 
 public class ActulizaPaquete {
-    @NotEmpty
+    @NotNull
     Integer id_paquete;
 
-    @NotEmpty
+    @NotNull
     Integer id_repartidor;
 
-    @Size(min = 10, max = 20, message = "Esta vacio")
+    @Size(min = 10, max = 50, message = "Esta vacio")
     String newState;
 
     public ActulizaPaquete() {

@@ -3568,3 +3568,748 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2023-05-25 08:40:44.531  INFO 18563 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-05-25 08:40:44.543  INFO 18563 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown initiated...
 2023-05-25 08:40:44.591  INFO 18563 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown completed.
+2023-05-25 14:07:44.025  INFO 16234 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 16234 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:07:44.045  INFO 16234 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:07:49.636  INFO 16234 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:07:49.798  INFO 16234 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 142 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:07:52.887  INFO 16234 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:07:52.928  INFO 16234 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:07:52.931  INFO 16234 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:07:53.345  INFO 16234 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:07:53.347  INFO 16234 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8984 ms
+2023-05-25 14:07:54.820  INFO 16234 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:07:57.154  INFO 16234 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:07:57.426  INFO 16234 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:07:57.735  INFO 16234 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:07:58.754  INFO 16234 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:07:59.400  INFO 16234 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:08:02.223  INFO 16234 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:08:02.248  INFO 16234 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:08:04.821  WARN 16234 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:08:08.451  INFO 16234 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:08:08.704  INFO 16234 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:08:08.708  INFO 16234 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:08:08.723  INFO 16234 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 14 ms
+2023-05-25 14:08:08.939  INFO 16234 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:08:08.984  INFO 16234 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 27.449 seconds (JVM running for 29.259)
+2023-05-25 14:09:07.913  WARN 16234 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.Float` from String "ww": not a valid `Float` value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Float` from String "ww": not a valid `Float` value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 11] (through reference chain: com.itq.seguimientorest.dto.Paquete["peso"])]
+2023-05-25 14:09:27.330 ERROR 16234 --- o.a.c.c.C.[.[.[/].[dispatcherServlet]          : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'] with root cause
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-05-25 14:09:43.696 ERROR 16234 --- o.a.c.c.C.[.[.[/].[dispatcherServlet]          : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'] with root cause
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-05-25 14:09:55.970  INFO 16234 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:09:55.991  INFO 16234 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown initiated...
+2023-05-25 14:09:56.063  INFO 16234 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown completed.
+2023-05-25 14:12:13.002  INFO 18626 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 18626 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:12:13.015  INFO 18626 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:12:16.267  INFO 18626 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:12:16.632  INFO 18626 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 317 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:12:18.349  INFO 18626 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:12:18.384  INFO 18626 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:12:18.386  INFO 18626 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:12:18.749  INFO 18626 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:12:18.750  INFO 18626 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5529 ms
+2023-05-25 14:12:19.524  INFO 18626 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:12:20.411  INFO 18626 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:12:20.678  INFO 18626 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:12:20.889  INFO 18626 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:12:21.373  INFO 18626 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:12:21.684  INFO 18626 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:12:23.562  INFO 18626 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:12:23.598  INFO 18626 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:12:25.178  WARN 18626 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:12:26.917  INFO 18626 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:12:27.103  INFO 18626 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:12:27.175  INFO 18626 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 15.592 seconds (JVM running for 17.094)
+2023-05-25 14:12:29.597  INFO 18626 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:12:29.603  INFO 18626 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:12:29.612  INFO 18626 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 4 ms
+2023-05-25 14:12:37.735 ERROR 18626 --- o.a.c.c.C.[.[.[/].[dispatcherServlet]          : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'] with root cause
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-05-25 14:13:12.215 ERROR 18626 --- o.a.c.c.C.[.[.[/].[dispatcherServlet]          : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'] with root cause
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-05-25 14:13:17.877 ERROR 18626 --- o.a.c.c.C.[.[.[/].[dispatcherServlet]          : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'] with root cause
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-05-25 14:13:37.620 ERROR 18626 --- o.a.c.c.C.[.[.[/].[dispatcherServlet]          : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'] with root cause
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-05-25 14:14:38.598  INFO 19944 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 19944 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:14:38.611  INFO 19944 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:14:42.773  INFO 19944 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:14:43.069  INFO 19944 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 267 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:14:44.798  INFO 19944 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:14:44.819  INFO 19944 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:14:44.820  INFO 19944 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:14:45.140  INFO 19944 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:14:45.145  INFO 19944 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6277 ms
+2023-05-25 14:14:46.000  INFO 19944 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:14:46.736  INFO 19944 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:14:47.080  INFO 19944 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:14:47.237  INFO 19944 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:14:47.652  INFO 19944 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:14:47.972  INFO 19944 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:14:49.551  INFO 19944 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:14:49.608  INFO 19944 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:14:50.887  WARN 19944 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:14:52.372  INFO 19944 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:14:52.626  INFO 19944 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:14:52.738  INFO 19944 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 15.964 seconds (JVM running for 17.259)
+2023-05-25 14:14:53.527  INFO 19944 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:14:53.536  INFO 19944 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:14:53.541  INFO 19944 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 4 ms
+2023-05-25 14:15:19.590  INFO 19944 --- c.itq.seguimientorest.business.ServicePaquete  : Paquete creado por: 2 para : 4
+2023-05-25 14:17:38.018  INFO 21148 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 21148 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:17:38.024  INFO 21148 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:17:41.898  INFO 21148 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:17:42.083  INFO 21148 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 161 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:17:43.712  INFO 21148 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:17:43.737  INFO 21148 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:17:43.740  INFO 21148 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:17:44.040  INFO 21148 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:17:44.040  INFO 21148 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5785 ms
+2023-05-25 14:17:44.764  INFO 21148 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:17:45.959  INFO 21148 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:17:46.306  INFO 21148 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:17:46.494  INFO 21148 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:17:47.025  INFO 21148 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:17:47.314  INFO 21148 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:17:49.647  INFO 21148 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:17:49.701  INFO 21148 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:17:51.576  WARN 21148 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:17:54.143  INFO 21148 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:17:54.316  INFO 21148 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:17:54.364  INFO 21148 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 18.492 seconds (JVM running for 19.855)
+2023-05-25 14:17:55.903  INFO 21148 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:17:55.909  INFO 21148 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:17:55.916  INFO 21148 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 3 ms
+2023-05-25 14:18:32.837 ERROR 21148 --- o.a.c.c.C.[.[.[/].[dispatcherServlet]          : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'] with root cause
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotEmpty' validating type 'java.lang.Float'. Check configuration for 'peso'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:66)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:933)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:250)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-05-25 14:21:52.102  INFO 23201 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 23201 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:21:52.123  INFO 23201 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:21:57.064  INFO 23201 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:21:57.291  INFO 23201 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 204 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:21:59.935  INFO 23201 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:21:59.978  INFO 23201 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:21:59.984  INFO 23201 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:22:00.429  INFO 23201 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:22:00.430  INFO 23201 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7988 ms
+2023-05-25 14:22:01.544  INFO 23201 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:22:02.803  INFO 23201 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:22:02.965  INFO 23201 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:22:03.359  INFO 23201 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:22:04.241  INFO 23201 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:22:04.637  INFO 23201 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:22:07.113  INFO 23201 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:22:07.136  INFO 23201 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:22:08.947  WARN 23201 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:22:11.343  INFO 23201 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:22:11.512  WARN 23201 --- tationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8081 is already in use
+2023-05-25 14:22:11.530  INFO 23201 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:22:11.545  INFO 23201 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown initiated...
+2023-05-25 14:22:11.722  INFO 23201 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown completed.
+2023-05-25 14:22:11.728  INFO 23201 --- org.apache.catalina.core.StandardService       : Stopping service [Tomcat]
+2023-05-25 14:22:11.889  INFO 23201 --- b.a.l.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-25 14:22:11.945 ERROR 23201 --- o.s.b.d.LoggingFailureAnalysisReporter         : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2023-05-25 14:22:20.092  INFO 21148 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:22:20.102  INFO 21148 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown initiated...
+2023-05-25 14:22:20.177  INFO 21148 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Shutdown completed.
+2023-05-25 14:22:49.939  INFO 24218 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 24218 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:22:49.958  INFO 24218 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:22:54.747  INFO 24218 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:22:54.990  INFO 24218 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 216 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:22:57.552  INFO 24218 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:22:57.610  INFO 24218 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:22:57.619  INFO 24218 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:22:58.080  INFO 24218 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:22:58.085  INFO 24218 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7885 ms
+2023-05-25 14:22:59.032  INFO 24218 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:23:00.732  INFO 24218 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:23:01.091  INFO 24218 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:23:01.417  INFO 24218 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:23:02.148  INFO 24218 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:23:02.605  INFO 24218 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:23:05.040  INFO 24218 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:23:05.095  INFO 24218 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:23:07.069  WARN 24218 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:23:09.139  INFO 24218 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:23:09.444  INFO 24218 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:23:09.540  INFO 24218 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 22.154 seconds (JVM running for 24.149)
+2023-05-25 14:23:10.368  INFO 24218 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:23:10.377  INFO 24218 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:23:10.385  INFO 24218 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 6 ms
+2023-05-25 14:23:24.172  INFO 24218 --- c.itq.seguimientorest.business.ServicePaquete  : Paquete creado por: 2 para : 4
+2023-05-25 14:23:34.331  WARN 24218 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character (',' (code 44)): expected a value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 12]]
+2023-05-25 14:23:51.351  WARN 24218 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.itq.seguimientorest.dto.Ack com.itq.seguimientorest.service.SeguimientoServiceController.crearPaquete(com.itq.seguimientorest.dto.Paquete): [Field error in object 'paquete' on field 'dimensiones': rejected value [hOLA]; codes [Pattern.paquete.dimensiones,Pattern.dimensiones,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [paquete.dimensiones,dimensiones]; arguments []; default message [dimensiones],[Ljavax.validation.constraints.Pattern$Flag;@f5d9acc,\d+x\d+x?\d+]; default message [must match "\d+x\d+x?\d+"]] ]
+2023-05-25 14:24:02.461  WARN 24218 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character (',' (code 44)): expected a value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 13, column: 28]]
+2023-05-25 14:24:29.515  INFO 24218 --- c.itq.seguimientorest.business.ServicePaquete  : Paquete creado por: 1 para : 4
+2023-05-25 14:26:12.909  INFO 25643 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 25643 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:26:12.937  INFO 25643 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:26:20.583  INFO 25643 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:26:20.862  INFO 25643 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 233 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:26:24.210  INFO 25643 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:26:24.291  INFO 25643 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:26:24.292  INFO 25643 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:26:24.893  INFO 25643 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:26:24.894  INFO 25643 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11555 ms
+2023-05-25 14:26:26.060  INFO 25643 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:26:27.391  INFO 25643 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:26:27.757  INFO 25643 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:26:28.157  INFO 25643 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:26:28.814  INFO 25643 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:26:29.210  INFO 25643 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:26:32.567  INFO 25643 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:26:32.605  INFO 25643 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:26:34.242  WARN 25643 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:26:37.179  INFO 25643 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:26:37.504  INFO 25643 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:26:37.610  INFO 25643 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 27.97 seconds (JVM running for 30.243)
+2023-05-25 14:26:39.806  INFO 25643 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:26:39.809  INFO 25643 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:26:39.828  INFO 25643 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 3 ms
+2023-05-25 14:26:50.223  WARN 25643 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character (',' (code 44)): expected a value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 2, column: 18]]
+2023-05-25 14:27:02.324  WARN 25643 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.Integer` from String "dd": not a valid `java.lang.Integer` value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Integer` from String "dd": not a valid `java.lang.Integer` value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 2, column: 17] (through reference chain: com.itq.seguimientorest.dto.ActulizaPaquete["id_paquete"])]
+2023-05-25 14:27:14.592  WARN 25643 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.itq.seguimientorest.dto.Ack com.itq.seguimientorest.service.SeguimientoServiceController.actualizarPaquete(com.itq.seguimientorest.dto.ActulizaPaquete): [Field error in object 'actulizaPaquete' on field 'newState': rejected value []; codes [Size.actulizaPaquete.newState,Size.newState,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [actulizaPaquete.newState,newState]; arguments []; default message [newState],20,10]; default message [Esta vacio]] ]
+2023-05-25 14:27:21.564  WARN 25643 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.itq.seguimientorest.dto.Ack com.itq.seguimientorest.service.SeguimientoServiceController.actualizarPaquete(com.itq.seguimientorest.dto.ActulizaPaquete): [Field error in object 'actulizaPaquete' on field 'newState': rejected value [En bodega miguel aleman]; codes [Size.actulizaPaquete.newState,Size.newState,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [actulizaPaquete.newState,newState]; arguments []; default message [newState],20,10]; default message [Esta vacio]] ]
+2023-05-25 14:29:36.024  INFO 27100 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 27100 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:29:36.065  INFO 27100 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:29:41.215  INFO 27100 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:29:41.591  INFO 27100 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 331 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:29:44.158  INFO 27100 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:29:44.211  INFO 27100 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:29:44.215  INFO 27100 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:29:44.695  INFO 27100 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:29:44.696  INFO 27100 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8143 ms
+2023-05-25 14:29:45.589  INFO 27100 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:29:47.200  INFO 27100 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:29:47.449  INFO 27100 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:29:47.691  INFO 27100 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:29:48.383  INFO 27100 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:29:48.776  INFO 27100 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:29:51.652  INFO 27100 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:29:51.673  INFO 27100 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:29:53.017  WARN 27100 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:29:55.258  INFO 27100 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:29:55.511  INFO 27100 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:29:55.616  INFO 27100 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 22.864 seconds (JVM running for 24.695)
+2023-05-25 14:29:56.883  INFO 27100 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:29:56.891  INFO 27100 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:29:56.906  INFO 27100 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 15 ms
+2023-05-25 14:30:06.292  INFO 27100 --- c.itq.seguimientorest.business.ServicePaquete  : Paquete : 3 modificado por repartidor: 2
+2023-05-25 14:30:06.293  INFO 27100 --- c.itq.seguimientorest.business.ServicePaquete  : Nuevo estado: En bodega miguel aleman
+2023-05-25 14:31:02.970  WARN 27100 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.itq.seguimientorest.dto.Ack com.itq.seguimientorest.service.SeguimientoServiceController.crearUbicacion(com.itq.seguimientorest.dto.Ubicacion): [Field error in object 'ubicacion' on field 'latitud': rejected value [19° 25′ ″ N]; codes [Pattern.ubicacion.latitud,Pattern.latitud,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [ubicacion.latitud,latitud]; arguments []; default message [latitud],[Ljavax.validation.constraints.Pattern$Flag;@3bdcf3a7,^(90|\d{1,2})°\s([0-5]?\d)′\s([0-5]?\d)″\s([NS])$]; default message [El formato debe ser: 19° 25′ 42″ N]] ]
+2023-05-25 14:31:17.203  WARN 27100 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.itq.seguimientorest.dto.Ack com.itq.seguimientorest.service.SeguimientoServiceController.crearUbicacion(com.itq.seguimientorest.dto.Ubicacion): [Field error in object 'ubicacion' on field 'descripcion': rejected value []; codes [Size.ubicacion.descripcion,Size.descripcion,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [ubicacion.descripcion,descripcion]; arguments []; default message [descripcion],180,10]; default message [La descripcion es muy corta]] ]
+2023-05-25 14:31:23.613  WARN 27100 --- o.s.w.s.m.s.DefaultHandlerExceptionResolver    : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): expected a value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): expected a value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 5, column: 2]]
+2023-05-25 14:39:21.775  INFO 30429 --- c.i.s.SeguimientoRestApplication               : Starting SeguimientoRestApplication using Java 11.0.19 on sasohdz-Aspire-ES1-572 with PID 30429 (/home/sasohdz/Documents/Developer/Java/seguimiento-rest/target/classes started by sasohdz in /home/sasohdz/Documents/Developer/Java/seguimiento-rest)
+2023-05-25 14:39:21.791  INFO 30429 --- c.i.s.SeguimientoRestApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-05-25 14:39:26.884  INFO 30429 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-25 14:39:27.201  INFO 30429 --- o.s.d.r.c.RepositoryConfigurationDelegate      : Finished Spring Data repository scanning in 273 ms. Found 5 JPA repository interfaces.
+2023-05-25 14:39:29.066  INFO 30429 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat initialized with port(s): 8081 (http)
+2023-05-25 14:39:29.115  INFO 30429 --- org.apache.catalina.core.StandardService       : Starting service [Tomcat]
+2023-05-25 14:39:29.127  INFO 30429 --- org.apache.catalina.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-05-25 14:39:29.671  INFO 30429 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring embedded WebApplicationContext
+2023-05-25 14:39:29.677  INFO 30429 --- o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7636 ms
+2023-05-25 14:39:30.773  INFO 30429 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Starting...
+2023-05-25 14:39:32.116  INFO 30429 --- com.zaxxer.hikari.HikariDataSource             : HikariPool-1 - Start completed.
+2023-05-25 14:39:32.362  INFO 30429 --- org.hibernate.jpa.internal.util.LogHelper      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-25 14:39:32.582  INFO 30429 --- org.hibernate.Version                          : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-05-25 14:39:33.220  INFO 30429 --- org.hibernate.annotations.common.Version       : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-25 14:39:33.581  INFO 30429 --- org.hibernate.dialect.Dialect                  : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-25 14:39:36.120  INFO 30429 --- o.h.e.t.j.p.internal.JtaPlatformInitiator      : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-25 14:39:36.166  INFO 30429 --- o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-25 14:39:37.837  WARN 30429 --- a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-25 14:39:40.339  INFO 30429 --- o.s.b.a.endpoint.web.EndpointLinksResolver     : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-25 14:39:40.612  INFO 30429 --- o.s.boot.web.embedded.tomcat.TomcatWebServer   : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-25 14:39:40.664  INFO 30429 --- c.i.s.SeguimientoRestApplication               : Started SeguimientoRestApplication in 21.803 seconds (JVM running for 23.651)
+2023-05-25 14:39:42.083  INFO 30429 --- o.a.c.c.C.[Tomcat].[localhost].[/]             : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-25 14:39:42.086  INFO 30429 --- o.s.web.servlet.DispatcherServlet              : Initializing Servlet 'dispatcherServlet'
+2023-05-25 14:39:42.089  INFO 30429 --- o.s.web.servlet.DispatcherServlet              : Completed initialization in 3 ms

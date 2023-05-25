@@ -3,7 +3,7 @@ import javax.validation.constraints.*;
 
 public class Usuario {
 
-    @NotEmpty
+    @NotNull
     Integer id_usuario;
 
     @NotEmpty

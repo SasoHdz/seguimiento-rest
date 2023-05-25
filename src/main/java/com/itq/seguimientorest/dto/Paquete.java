@@ -3,16 +3,15 @@ import javax.validation.constraints.*;
 
 
 public class Paquete {
-    @NotEmpty
     Integer id_paquete;
 
     @Size(min = 10 , max = 180, message = "La descripcion es muy corta")
     String descripcion;
 
-    @NotEmpty
+    @NotNull
     Float peso;
 
-    @Pattern(regexp = "\\d+")
+    @Pattern(regexp = "\\d+x\\d+x?\\d+")
     String dimensiones;
 
     Direccion direccion_entrega;
@@ -23,10 +22,10 @@ public class Paquete {
     @Size(min = 3, max = 180, message = "El estado es muy corto")
     String estado;
 
-    @NotEmpty
+    @NotNull
     Integer id_usuario_remitente;
 
-    @NotEmpty
+    @NotNull
     Integer id_usuario_destinatario;
 
     public Paquete(Integer id_paquete, String descripcion, Float peso, String dimensiones, Direccion direccion_entrega,

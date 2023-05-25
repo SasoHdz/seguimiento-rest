@@ -39,14 +39,12 @@ public class SeguimientoServiceController {
         try {
             if (servicePaquete.crearPaquete(paquete)) {
                 LOGGER.debug("Paquete creado con exito :)");
-                LOGGER.debug("Paquete creado con exito :)");
-                LOGGER.debug("Paquete creado con exito :)");
                 ack.setDescripcion("Paquete creado con exito");
                 ack.setCodigo(200);
             } 
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
-            
+            LOGGER.error(e.getCause().toString());
             ack.setDescripcion(e.getCause().getMessage());
             ack.setCodigo(400);
         }
@@ -65,6 +63,7 @@ public class SeguimientoServiceController {
             }
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
+            LOGGER.error(e.getCause().toString());
             ack.setCodigo(500);
             ack.setDescripcion(e.getMessage());
         }
@@ -81,12 +80,15 @@ public class SeguimientoServiceController {
         try {
             if (serviceUbicacion.crearUbicacion(ubicacion)) {
                 LOGGER.debug("Ubicacion:" + ubicacion.getDescripcion() + "creada con exito");
+                LOGGER.info("Ubicacion : "+ubicacion.getDescripcion()+" creada");
                 ack.setDescripcion("Ubicacion:" + ubicacion.getDescripcion() + "creada exitosamente");
                 ack.setCodigo(200);
     
             } 
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
+            LOGGER.error(e.getCause().toString());
+            LOGGER.error("Ubicacion no pudo ser creada");
             LOGGER.debug("Ubicacion no pudo ser creada");
             ack.setDescripcion(e.getMessage());
             ack.setCodigo(400);
